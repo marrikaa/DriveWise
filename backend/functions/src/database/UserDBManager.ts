@@ -27,7 +27,7 @@ export const register = async (username: string, email: string, password: string
 export const login = async (email: string, password: string): Promise<User | undefined> => {
     const userCredentials = await signInWithEmailAndPassword(authenticator, email, password);
     const user = await getUserById(userCredentials.user.uid);
-    return { username: user.username, uid: userCredentials.user.uid } as User;
+    return user as User;
 }
 
 export const addUser = async (userName: string, uid: string) => {

@@ -45,8 +45,9 @@ app.post('/api/login', async (request, response) => {
         }
         const user: (User | undefined) = await login(request.body.email, request.body.password);
         response.status(200).send(user);
+
     } catch (e: any) {
-        response.status(500).send({ username: "", message: e.message });
+        response.status(500).send({ message: e.message });
     }
 })
 
