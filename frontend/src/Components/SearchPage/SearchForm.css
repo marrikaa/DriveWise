@@ -1,0 +1,72 @@
+
+input { display: inline-block;}
+
+ input[type="datetime-local"] {
+    width: 15rem;
+    height: 3rem;
+    margin: 10rem 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: large;
+}
+
+input[type="text"] {
+    width: 20rem;
+    margin: 10rem 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: large;
+    height: 3rem;
+}
+
+.search-button{
+    width: 8rem;
+    margin: 10rem 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: large;
+    height: 4rem;
+    justify-content: center;
+}
+
+.search-button:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.cities-container{
+    height: 40rem;
+    width: 20rem;
+    text-align: center;
+    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 1rem;
+    padding: .5rem;
+}
+
+.each-city{
+    text-align: left;
+    margin: .5rem;
+    cursor: pointer;
+    background-color: rgb(234, 232, 232);
+    padding: 1rem;
+    border-radius: .5rem; 
+}
+
+.each-city:hover{
+    background-color: rgb(218, 217, 217);
+}
+
+.formInput{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), 
+    url("https://images.unsplash.com/photo-1584908917822-6799d69a72cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmludGFnZSUyMGNhcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+    opacity: .9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+

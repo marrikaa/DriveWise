@@ -1,0 +1,19 @@
+.form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    
+}
+
+.login-form input{
+    padding: 10px 25px;
+    margin: 5px 0px;
+    font-size: larger;
+    border-radius: 10px;
+    border: none;
+}
+
+
+

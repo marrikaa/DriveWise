@@ -1,0 +1,41 @@
+.home{
+    background-image:  
+    url("https://i.pinimg.com/736x/27/bc/a5/27bca5658a5105609552b0bdff7da301.jpg");
+    opacity: .9;
+    background-position:right;
+    margin-right: 5rem;
+    background-repeat: no-repeat;
+    position:relative;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+.welcome-text{
+    text-decoration: wavy;
+    color: rgb(234, 165, 62);
+    font-weight: 600px;
+    font-size: x-large;
+    padding: 350px 0px;
+    text-align: left;
+    margin-left: 5rem;
+    line-height: 40px;
+    align-items: flex-start;
+    opacity:0.9;
+}
+
+.reservation-button{
+    background-color: rgb(245, 151, 9);
+    width: 200px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 10px;
+    opacity:0.8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.reservation-button:hover{
+    box-shadow: 7px 5px 10px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}

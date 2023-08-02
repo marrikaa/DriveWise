@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { getExternalUser } from '../../Client/User';
+import RegistrationForm from '../RegistartionForm/RegistrationForm';
+import './LoginForm.css'
 
 
 // import { AppContext } from '../../context/AppContext';
@@ -23,11 +25,11 @@ const LoginForm = () => {
     }
     return (
         <div className='login-form'>
-            <form onSubmit={formSubmitted} className='formInput' method='get'>
-                <h2>Log in</h2>
-                <input name="emailInput" placeholder='Your email adress' type="email" />
-                <input name="passwordInput" placeholder='Your password' type="password" />
-                <button className='red-button' type='submit'>log in</button>
+            <form onSubmit={formSubmitted} className='form-input' method='get'>
+                <h1 className='font-style'>Log In</h1>
+                <input name="emailInput" placeholder='Your email adress' type="email" className='font-style' />
+                <input name="passwordInput" placeholder='Your password' type="password" className='font-style' />
+                <button className='create-account-button' type='submit'>Log In</button>
             </form>
             {error && <label style={{ marginTop: '1em' }}>{error}</label>}
         </div>

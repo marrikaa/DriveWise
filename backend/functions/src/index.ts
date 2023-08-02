@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { User } from "./types/types";
 import { login, register } from "./database/UserDBManager";
+import { getCities } from "./database/CitiesDBManager";
 // import { https } from 'firebase-functions';
 
 const app = express();
@@ -51,16 +52,15 @@ app.post('/api/login', async (request, response) => {
     }
 })
 
-app.get('/test', async (request, response) => {
-    response.status(200).send( "fjyfdhgfhfhjf");
+app.get('/cities', async (request, response) => {
+    const cities = await getCities();
+    response.status(200).send( cities);
     
 })
+
 
 // exports.app = https.onRequest(app);
 const port = 3001;
 app.listen(port, () => {
     console.log("Listen on the port 3001...");
 });
-
-
-

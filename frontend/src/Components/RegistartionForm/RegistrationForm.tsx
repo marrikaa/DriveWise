@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { createExternalUser } from '../../Client/User';
+import { createExternalUser, getUserWithgoogleSignIn } from '../../Client/User';
+import './RegistartionForm.css'
 
 
 // import { AppContext } from '../../context/AppContext';
@@ -32,16 +33,24 @@ const RegistrationForm = () => {
         }
     }
 
+    // const handleGoogleSignIn = async () => {
+    //     try{
+    //         const user = await getUserWithgoogleSignIn(); 
+            
+    //     }catch(error){
+    //         console.log(error);
+    //     }
+    // }
+
     return (
-        <div className='login-form'>
-            <form onSubmit={formSubmitted} className='formInput'>
-                <h2>Register</h2>
-                <h3>{wrongInput}</h3>
+        <div className='registartion-form'>
+            <form onSubmit={formSubmitted} className='form-input'>
+                <h2 className='font-style'>Register</h2>
                 <input name='email' placeholder='Your email adress' type="email" />
                 <input name='username' placeholder='Your username' type="text" />
                 <input name='password' placeholder='Your password' type="password" />
                 <input name='password_2' placeholder='Confirm password' type="password" />
-                <button className='red-button register-button' type='submit'>Register</button>
+                <button className='create-account-button' type='submit'>Register</button>
                 {wrongInput !== "" && <label>{wrongInput}</label>}
             </form>
         </ div>

@@ -1,0 +1,40 @@
+.create-account-button{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: large;
+    font-family:  'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(243, 157, 36);
+    color: white;
+    margin: 5px 0px;
+    border: none;
+}
+
+
+.create-account-button:hover{
+    font-weight:bold;
+    cursor: pointer;
+
+}
+
+
+.Sign-in{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), 
+    url( "https://images.saymedia-content.com/.image/t_share/MTc2MjM1MzQwNDQzNjI0ODcz/road-trip-quotes-and-caption-ideas.jpg");
+    opacity: .9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+
+
+

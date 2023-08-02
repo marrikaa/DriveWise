@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { collection, setDoc, doc, getDoc, where, query, getDocs, updateDoc, arrayUnion } from "firebase/firestore";
 import { User } from '../types/types';
 import { authenticator, dbConnection } from './firebaseConfig';
@@ -8,6 +8,23 @@ const isUserUnique = async (username: string): Promise<boolean> => {
     const q = query(usersRef, where("username", "==", username));
     const querySnapshot = await getDocs(q);
     return querySnapshot.size === 0;
+}
+
+export const addUser = async (userName: string, uid: string) => {
+    await setDoc(doc(dbConnection, "users", uid), {
+        username: userName,
+        email: "",
+        img: "",
+        cars: [],
+        reviews: [],
+        messages: [],
+    });
+}
+
+export const getUserById = async (uid: string): Promise<User> => {
+    const docRef = doc(dbConnection, "users", uid);
+    const docSnap = (await getDoc(docRef)).data();
+    return docSnap as User;
 }
 
 export const register = async (username: string, email: string, password: string): Promise<string> => {
@@ -30,23 +47,12 @@ export const login = async (email: string, password: string): Promise<User | und
     return user as User;
 }
 
-export const addUser = async (userName: string, uid: string) => {
-    await setDoc(doc(dbConnection, "users", uid), {
-        username: userName,
-        email: "",
-        img: "",
-        cars: [],
-        reviews: [],
-        messages: [],
-    });
+export const googleSignIn = async () => { 
+    const provider = new GoogleAuthProvider(); 
+    const userCredential = await signInWithPopup(authenticator, provider); 
+    const user : User = await getUserById(userCredential.user.uid);
+    return user as User;
 }
-
-export const getUserById = async (uid: string): Promise<User> => {
-    const docRef = doc(dbConnection, "users", uid);
-    const docSnap = (await getDoc(docRef)).data();
-    return docSnap as User;
-}
-
 
 export const getAllUsers = async (): Promise<User[] | undefined> => {
     const usersRef = collection(dbConnection, "users");

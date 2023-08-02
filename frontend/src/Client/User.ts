@@ -30,3 +30,16 @@ export const getExternalUser = async (email: string, password: string): Promise<
     });
     return response.json();
 }
+
+export const getUserWithgoogleSignIn = async (): Promise<any> => {
+    const response = await fetch(`${root}/api/googleSignIn`, {
+        method: "POST",
+    });
+    return response.json();
+}
+
+export const getCities = async (): Promise<any> => {
+    const response = await fetch(`${root}/cities`).then(data=> data.json());
+    return response;
+}
+
